@@ -14,7 +14,11 @@ function SearchingForm() {
     })
 
     const redirectOnPageSearching = (driverType, date, pickUpTime, totalPassenger) => {
-        navigate(`/search-result/${driverType}/${date}/${pickUpTime}/${totalPassenger}`)
+        if (!totalPassenger) {
+            navigate(`/search-result/${driverType}/${date}/${pickUpTime}`)
+        } else {
+            navigate(`/search-result/${driverType}/${date}/${pickUpTime}/${totalPassenger}`)
+        }
     }
 
     return (
@@ -83,11 +87,11 @@ function SearchingForm() {
                             ...prevState,
                             totalPassenger: e.target.value
                         }))
-                    }} required/>
+                    }}/>
             </Col>
             <Col lg="2" className="d-flex flex-column justify-content-center align-items-center mt-4">
                 <Button style={{backgroundColor: "#5CB85F"}} className="w-75" onClick={() => {
-                    if (!searchingCars.driverType || !searchingCars.date || !searchingCars.pickUpTime || !searchingCars.totalPassenger) {
+                    if (!searchingCars.driverType || !searchingCars.date || !searchingCars.pickUpTime) {
                         alert(`Isi inputan dengan lengkap yaa.. :)`)
                     } else {
                         redirectOnPageSearching(searchingCars.driverType, searchingCars.date, searchingCars.pickUpTime, searchingCars.totalPassenger)

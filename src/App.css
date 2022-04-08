@@ -299,6 +299,21 @@ body {
 /* ********** DETAIL CAR END ********** */
 
 
+/* ********** PAGE 404 BEGIN ********** */
+
+.img-error {
+  width: 50vw;
+}
+
+.error-text {
+  font-size: 10vw;
+  font-weight: bolder;
+  line-height: 1em; 
+  border-bottom: 1vw solid red;
+}
+
+/* ********** PAGE 404 END ********** */
+
 
 /* ********** @MEDIA SCREEN BEGIN ********** */
 
