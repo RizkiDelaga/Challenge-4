@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button, Col, Container, Row } from "reactstrap";
 import error404Image from '../assets/images/404_error.jpg'
 
@@ -13,7 +14,7 @@ function Page404() {
                         </Col>
                         <Col xs="lg" className="d-flex flex-column align-items-center">
                             <h1 className="error-text">ERROR</h1>
-                            <Button color="primary" className="rounded-pill px-4 py-2 mt-4">Back To Home</Button>
+                            <Link to={"/"}><Button color="primary" className="rounded-pill px-4 py-2 mt-4">Back To Home</Button></Link>
                         </Col>
                     </Row>
                 </Container>
